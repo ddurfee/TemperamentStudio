@@ -640,8 +640,9 @@ public class KeyboardPanel extends JPanel implements MouseListener {
 	if(useSines){
 	    sgen.addNote(note,frequencies[note-lownote]);
 	}
-	else
+	else{
 	    midichannels[thechannel].noteOn(note,127);
+	}
 	keyon[note-lownote]=true;	    
 	repaint();
     }

@@ -40,6 +40,33 @@ If you modify the code, I'd love
 to hear about it! - Dallin S. Durfee (April 2014)
 
 Things I've thought about changing, but probably won't have time to:
+- There is a bug I don't understand.  If you are running the program
+    in windows when your computer goes to sleep, when you resume from
+    sleep, there is a long (~5 second) delay between playing a note
+    on the keyboard and hearing the note.  The code functions perfectly,
+    and the blue squares come and go on time, but the sound is late.
+    When I querry the synthesizer's latency (synth.getLatency()) it reports
+    120 ms, just like it does before the problem starts.  And I can 
+    querry it and get immediate results, turn the note on, and then
+    immediately querry again and get results, even though the note
+    isn't sounding yet.  This delay doesn't happen when you use the
+    sine generator - it is clearly a Java MIDI thing.
+    There is no delay if you start playing a MIDI file after resuming.
+    But the delay is there if there is a MIDI file playing when you
+    put the computer to sleep.  Stoping playback halts the MIDI file
+    immediately, and then it works properly (for file playback, not 
+    pressing keys).  Pressing the pause button results in a delay before
+    pausing.  So the synth/sequencer respond quickly, but events 
+    are delayed by about 5 seconds.
+    This does not happen in when running the program in Linux in
+    virtualbox when I sleep the guest Windows OS, if I save and
+    resume the virtual machine while the program is running, or
+    if I pause and resume the virtual machine (I
+    can't suspend the virtual Linux machine).  This doesn't
+    happen when I pause and resume a virtual windows machine (I
+    can't suspend the virtual windows machine).
+- Improve latency - part of the latency comes from the JAVA sound API,
+    part comes from the keyboard event dispatcher.
 - Remove references back to parent class, use interfaces instead
 - Move sequencer functions into a separate class file.
 - Allow user to select the midi device.
@@ -2263,7 +2290,7 @@ public class TemperamentStudio extends JFrame {
     // problems writing it, false otherwise
     private static Boolean writeVersionFile(){
 	try{
-	    File thefile = new File(jarPath+programName+".ver");
+	    File thefile = new File(jarPath+"textfiles/"+programName+".ver");
 	    BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(thefile)));
 	    out.write(versionString,0,versionString.length());
 	    out.close();
@@ -2277,7 +2304,7 @@ public class TemperamentStudio extends JFrame {
     // previously installed) it returns "0".  If there was an
     // error, it returns "Error"
     private static String readVersionFile(){
-	File thefile = new File(jarPath+programName+".ver");
+	File thefile = new File(jarPath+"textfiles/"+programName+".ver");
 	if(!thefile.exists()){
 	    return("0");
 	}
