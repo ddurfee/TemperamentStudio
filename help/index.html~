@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>Help file for TemperamentStudio</title>
+</head>
+<body>
+<h1><img src="MMTIcon.png"> TemperamentStudio</h1>
+(c) 2014 Dallin S. Durfee
+This software is free to distribute and modify under the <a href="../textfiles/license.txt">MIT License</a>.
+<hr>
+TemperamentStudio is designed to help you hear how various
+instruments sound when they are tuned using different modern and historic
+tuning schemes or intonations.  For ideas of things to try with the software,
+see the <a href="thingstotry.html">Things to Try</a> page.
+<br><br>
+The software can be run in a graphic or a command line
+mode.  Most uses will use the graphical interface, which is described in
+this help document.<sup><a href="#commandline">1</a></sup>
+
+The software has a virtual instrument that can be played by clicking on the virtual musical keyboard keys.  This instrument can be tuned using different methods.  The software can also load MIDI files and play them back using the desired tuning methods.<sup><a href="#midifiles">2</a></sup>  Several example MIDI files are included with this software.  You can create new MIDI files or edit existing MID files using software such as the free program <a href="http://musescore.org/">MuseScore</a>, and you can download additional MIDI files from music sites such as <a href="http://www.mutopiaproject.org/">Mutopia</a>.
+<br /><br />
+The different controls in the program are numbered in the image below.  Below
+the image is a description of each control by number.
+<br />
+<br />
+<img src="ScreenshotLabeled.png">
+<br />
+<br />
+
+
+<br /><b>1. Help</b> Pressing this button will open this help file.  You can also access this function by pressing the F1 key.
+<br /><b>2. Things to Try</b> Pressing this button will open a page which will give you examples of things you can do with this software to explore intonation.
+<br /><b>3. Tuning</b> Click on this drop-down box to select which tuning scheme to use.  The virtual instrument will immediately be re-tuned using the selected scheme.  The tuning schemes included by default are described in the <a href="#tuningschemes">Tuning Schemes</a> section.  Additional tuning schemes can be added to the program, as described in the <a href="#advanced">advanced</a> section.  You can also access this function by holding down the "alt" key and then pressing s.  If you select the tuning scheme "generic_meantone", an additional control will appear - see <a href="#genericmeantone">Generic Meantone</a> for more information.
+<br /><b>4. Tuning Root</b> Most tuning schemes are tuned relative to a "root" note.  This drop-down box selects which note to use as the root.  You can also access this function by holding down the "alt" key and then pressing r.
+<br /><b id="instrument">5. Inst</b> This drop-down box selects which instrument sound to use when playing on the virtual instrument keyboard.  Note that when playing MIDI files, unless advanced options are used, the MIDI file will play back using the instrument selected in the MIDI file rather than the instrument selected here.  Also note that the instruments listed depends on the MIDI capabilities of the default synthesizer that Java uses on your computer.  When comparing different tuning schemes, it is important not to use instruments which have vibrato, which can be confused with and can mask beating.  Also, the way that this software implements different tuning schemes assumes that the instrument is initially tuned to an equal temperament scale.  Stringed keyboard instruments like pianos are often tuned using a scheme known as "stretch tuning."  As such, if you use these instrument sounds you may not achieve the most accurate results.  The sounds that I've found to be the best for comparing tuning methods are organ tones.  This is because organs play continuous notes which don't decay, and because organ pipes tend to have very little dispersion such that the frequencies in the sound form a nearly perfect harmonic series.
+<br /><b>6. File Controls</b> If you click on this box, the MIDI file controls will be activated, allowing you to load and play MIDI files.  See <a href="#filecontrols">File Controls</a> for more information.
+<br /><b>7. Advanced</b> To keep the interface clean and simple, many advanced controls are hidden by default.  Click on this box to enable advanced options.  See <a href="#advanced">Advanced</a> for more information.
+<br /><b id="virtualkeyboard">8. Virtual Instrument Keyboard</b> Click on any of the keys on the virtual musical keyboard to play notes on the virtual instrument.  You can also play notes by pressing the keys on your computer indicated at the top of some of the virtual instrument keys (zsxdcvgbhnjmq2w3er5t6y7ui9o0p).  Notes that are currently being played are indicated by a blue square on the key.
+<br /><b>9. Source</b> Click on this drop-down menu to set the virtual instrument to play the MIDI instrument sound selected with the "Inst" drop-down box, to play pure sine waves, or to play sine waves plus harmonics.  See <a href="#source">Source</a> for more information.
+<br /><b id="intervalroot">10. Interval Root</b> This drop-down box selects the key to use when inserting chords or intervals using the "interval and chord" buttons.
+<br /><b id="chords">11. Intervals/Chords</b> Pressing any of these buttons will play a chord or interval based on the note selected in the "Interval Root" drop-down box.  All notes being played on the virtual instrument are stopped before playing the selected chord or interval.
+<br /><b>12. Invert Buttons</b> Press these buttons to invert chords that are currently being played.
+<br /><b>13. All Notes Off</b> Press this button to silence all notes being played on the virtual instrument.  This button does not affect the playback of <a href="#filecontrols">MIDI files</a>.
+<br /><b>14. Sustain</b> Pressing this button toggles sustain mode.  If sustain is on, each click on the virtual keyboard (or press of the hot key for a note) will toggle a note &mdash; it will turn it on if it is off, or turn it off if it is on.  If sustain is off, a note will turn on when it is clicked on (or its hotkey is pressed) and will turn off when the mouse button (or hotkey) is released.
+<br /><b>15. Transpose Buttons</b> Press these buttons to transpose the notes that are currently being played on the virtual keyboard up or down by a half step, a fourth, a fifth, or an octave.  You can also press the left/right cursor keys to move all notes up/down by a half step.  The up/down cursor keys will move the notes up/down by an octave.
+
+<h2>Keyboard Focus</h2>
+Some of the controls (all of the drop-down boxes, for example) capture keystrokes, allowing you to manipulate them without using the mouse.  This means, however, that when these controls have the focus, the virtual keyboard will not see keystrokes.  For example, if you press the down cursor to move all notes down an octave while the "Tuning" control has the focus, rather than moving notes down an octave, the tuning scheme will change to the next one down the list in the drop-down box.  When these controls have the focus, the text "(if the hot keys are not working, press esc.)" will be highlighted in red.  To return the focus to the virtual keyboard, press the escape key.
+
+
+<h2 id="filecontrols">File Controls</h2>
+When the file controls are enabled, an additional group of controls (shown below) will become visible.
+<br />
+<br />
+<img src="FileControlsLabeled.png">
+<br />
+<br />
+<br /><b>1. Select File</b> Press this button to load a MIDI file.  The path of the currently loaded file is displayed in the text box to the right of this button.
+<br /><b>2. Tempo</b> The playback tempo can be dynamically adjusted by clicking and dragging on this slider.  This slider only affects the playback speed of music being played by this software - it does not affect the playback speed of MIDI files saved by this software.
+<br /><b>3. Save</b> Clicking on this button will save a MIDI file which has been adjusted to play with the selected tuning method.  The saved file can be played on a generic midi player and should retain the tuning you selected.
+<br /><b>4. Play</b> Play the MIDI file with the selected tuning.  You can adjust tuning parameters while it is playing and the tuning will be dynamically updated.  While a MIDI file is playing, this button will change to a "stop and rewind" button which will stop playback and return to the beginning of the MIDI file.  As the MIDI file playes, each note currently being sounded will be indicated by a red square on the virtual musical keyboard (notes that are outside of the range of the virtual keyboard will still be played, even though there will be no red square representing them).
+<br /><b>5. Pause</b> Clicking on this button during MIDI playback will pause playback.  Pressing it again will continue playback at the point where it was paused.
+<br /><b>6. Progress Bar</b> This bar indicates where you are in the song.  By clicking on this bar you can move immediately to any point in the song.
+
+
+<h2 id="source">Source</h2>
+The "source" drop-down menu allows you to select how the virtual instrument sounds.  When "MIDI" is selected, tones will be generated using the MIDI instrument selected with the "Inst" drop-down menu.  When "Sine Waves" is selected, each note on the virtual instrument will generate a pure sine wave.  When "Sine + harmonics" is selected, each note will generate a sum of sine waves consisting of the note's root frequency plus harmonics of the root frequency.  
+<br /><br />
+When either "Sine Waves" or "Sine + harmonics" is selected, a box with the words "clip" and "under" will appear to the right of this control, as depicted below.
+<br />
+<br />
+<img src="ClipUnder.png">
+<br />
+<br />
+The "clip" indicator will turn red if the sine wave output is clipping.  This will happen if too many notes are played at once.  It is also affected by how large the amplitudes of the different harmonics are.  This tells you that the wave is being distorted, causing additional frequency components to be present.
+<br /><br />
+The "under" indicator will turn red if the sine wave synthesizer experiences an "underrun" meaning that the computer is unable to calculate the sine waves fast enough to keep up with playback.  This occurs if there are too many notes being played at once.  It is also affected by whether you are just playing a single sine wave per note or whether you are using the "Sine + harmonics" setting.  If this light is on, you need to reduce the number of notes being played, change the source setting, or get a faster computer.
+<br /><br />
+When the "Sine + harmonics" option is selected, an additional set of controls will appear in the bottom left-hand corner of the program's window.  These controls, depicted below, set the amplitude of each of the harmonics.  A slider at the bottom position means that harmonic will have zero amplitude and will not be heard.  Moving a slider upward will increase the amplitude of that harmonic.
+<br />
+<br />
+<img src="HarmonicsControls.png">
+<br />
+<br />
+
+<h2 id="tuningschemes">Tuning Schemes</h2>
+The tuning schemes included by default are the following:
+<ul>
+<li><b>equal_temperament</b> - This is the standard 12-tone equal temperament used almost exclusively today.</li>
+<li><b>pythagorean</b> - Pythagorean tuning, based on the just fifth ratio of 3/2.</li>
+<li><b>qc_meantone</b> - Quarter comma meantone, the predominant tuning scheme in wester music in the baroque period.  It traditionally used a root note of D.</li>
+<li><b>five_limit</b> - A five-limit scale based on Ptolemaic just intonation.  This is a just intonation scheme which uses the ratios for the diatonic scale given in Ptolemy's "intensely diatonic scale."  The missing ratios for the black notes were filled in using intervals already present in the Ptolemaic scale, selecting the most just (lowest integer) interval when more than one options was possible.  For example, to define the minor third above the root, I considered all of the minor thirds present in the Ptolemaic scale.  There are two of them - one being a ratio of 6/5, the other a ratio of 32/27.  So I selected the most just option, 6/5.</li>
+<li><b>werkmeister_III</b> - The Werkmeister III scale, which some think may be similar to the tuning Bach used when performing the Well-Tempered Clavier.  See <a href="http://www.kylegann.com/histune.html">http://www.kylegann.com/histune.html</a> and <a href="https://en.wikipedia.org/wiki/Werckmeister_temperament">https://en.wikipedia.org/wiki/Werckmeister_temperament</a> for more information.
+</li>
+<li><b>generic_meantone</b> - This option allows you to build a meantone temperament based on an arbitrary definition of the 5th.  See the <a href="#genericmeantone">Generic Meantone</a> section below.  This tuning is not defined in the tuning file, but is implemented directly by the software.
+</ul>
+
+<h2 id="genericmeantone">Generic Meantone</h2>
+The "generic_meantone" tuning scheme allows you to tune the virtual instrument
+using meantone intonation with an arbitrary fifth ratio.  When you select this tuning scheme, an additional slider control will appear, as depicted below.
+<br />
+<br />
+<img src="GenericMeantone.png">
+<br />
+<br />
+Using this slider you can set the ratio for the fifth.  For example, in Pythagorean tuning, the ratio of the frequencies of the two notes in a fifth is 3/2, or 1.5.  By sliding the slider to 1.5, you will tune the instrument to Pythagorean tuning.  Or by sliding it to 2<sup>7/12</sup> (&#8776; 1.4983071), you will tune the instrument to equal temperament tuning.  The labels "QC," "ET," and "Py" indicate the slider position that will realize quarter comma meantone temperament, equal temperament, or Pythagorean tuning.
+
+
+
+<h2 id="advanced">Advanced Options</h2>
+
+When you enable advanced controls, several additional controls will appear.  One such control is the "Edit Schemes" control, shown below, which appears directly below the "Tuning" drop-down box.  Note that this button will not be visible if the "generic_meantone" tuning scheme is selected.
+<br />
+<br />
+<img src="EditSchemes.png">
+<br />
+<br />
+Pressing this button will open a text editor which will allow you to edit the configuration file which defines the tuning schemes you can use.  To learn more about editing tuning schemes, see <a href="#editingschemes">Editing Tuning Schemes</a> below.
+<br /><br />
+Another advanced control is the "Tuning Reference" control shown below.
+<br />
+<br />
+<img src="TuningReference.png">
+<br />
+<br />
+This control will appear beneath the "File Controls" checkbox.  Under normal operation, the program will shift all tuning schemes to keep the A above middle C at a frequency of 440 Hz - the standard reference used most often today.  But using the "Tuning Reference" control you can change the reference pitch.  Using the drop-down box, you can select which note to use as the reference pitch.  Using the combo box to the right of the drop-down box you can either type the frequency you want for that note, or you can selected one of the drop down options.  Note that if the frequency you select is too far from standard tuning, it won't be possible to realize the selected tuning (it's limited by the MIDI pitch bend range &mdash; see <a href="#howitworks">"How this software tunes the MIDI instrument"</a> for more information).  If this is the case, you will receive a warning.
+<br />
+<br />
+For most notes that you select, the only frequency option in the drop-down frequency selector will be the "standard" frequency of that note (the frequency of that note in an equal temperament scale tuned to A 440).  However, there are several additional options in the drop-down menu if you select "A" as the reference note.  Those include the European A 442 and A 443 standards used by some orchestras.  
+<br />
+<br />
+During the Baroque and classical eras there wasn't a well established pitch to which all instruments were tuned.  But many modern performers specializing in ancient music have agreed upon some conventions that are frequently used when performing music from different epochs.  Some of these conventions are included in the drop-down list when A is chosen as the reference note.  One such convention is "Baroque Pitch," or A 415, used for performing certain Baroque pieces, "Chorton Pitch," or A 466, used for performing certain Baroque church music, and "Classical Pitch," or A 432.
+<br /><br />
+If the reference note of C is selected, the drop-down list includes C 256.  This is known as "scientific" pitch, because 256 = 2<sup>8</sup>.  However, the definition of what 1 Hz means was somewhat arbitrary, so the fact that middle C is close to 256 Hz is just a coincidence, and there really isn't anything very scientific about "scientific" pitch.  
+<br /><br />
+More on pitch standards can be found at <a href="https://en.wikipedia.org/wiki/Concert_pitch">https://en.wikipedia.org/wiki/Concert_pitch</a> and <a href="https://en.wikipedia.org/wiki/A440_(pitch_standard)">https://en.wikipedia.org/wiki/A440_(pitch_standard)</a>.
+<br /><br />
+Another advanced control will appear next to the "All Notes Off" button, labeled, "Show."  This drop-down box will allow you to display various information on the keys of the virtual instrument.  Options include "Frequencies," which will display the frequency of each note for the given tuning scheme, "Decimal Ratios," which will display the factor by which you have to multiply the frequency of the root note of the tuning scheme to get each note on the keyboard, "Integer Ratios" which shows the same thing, but writing the factor as a ratio of small integers when possible, "Note Names" which displays the name of each note, and "MIDI Note Number" which displays the MIDI note number of each note, as you might expect it would.
+<br /><br />
+The rest of the advanced controls are in a group in the File controls.  They are depicted below, and described by number below the image.
+<br /><br />
+<img src="AdvancedFileControlsLabeled.png">
+<br /><br />
+<br /><b>1. Bend Range</b> Unless you know a thing or two about MIDI synthesis, you should just leave this set to "2."  The way that tuning is performed in this software involves MIDI pitch bend commands (see <a href="#howitworks">"How this software tunes the MIDI instrument"</a> below).  To function properly, the software has to know what the maximum pitch bend range is for the MIDI synthesizer.  For most synthesizers (including all which conform to the General MIDI standard) this wil be two.
+<br /><b>2. Write Bend Range Command</b> Unless you know a thing or two about MIDI synthesis, you should just leave this box checked.  Some synthesizers can have their bend range set.  If this box is checked, whenever a MIDI file is saved, the file will include a command to attempt to set the MIDI bend range to the value set with the Bend Range control.
+<br /><b>3. Instrument for Saved File/Playback</b> By default, when a MIDI file is played in this software, or when a re-tuned MIDI file is saved by this software, the instrument sound that will be used will be determined by instrument change commands in the original MIDI file.  But because of the way that this software emulates different tuning schemes, all MIDI channels have to have the same instrument.  So if a file has a piccolo part and a trumpet part, they both have to be combined into one instrument.  The default setting is for the software to simply apply any instrument changes as they come along to all channels.  So, in the example I've given, if the file set up the piccolo first and the trumpet second, the default behavior of this software would be to first set all channels to piccolo, and then set them all to trumpet - such that you would only end up hearing trumpet sounds.  But you can change this default behavior.  The "Use first instrument found in file" option will set all channels up using the first instrument command found in the file, and then ignore subsequent instrument commands.  The "Use instrument selected above" option will ignore all instrument change commands in the file and use the instrument that you selected for the virtual instrument with the "Inst" drop-down box.  Note that even if the virtual instrument is set up to use sines rather than MIDI instruments, MIDI file playback and the saving of MIDI files will still use MIDI instruments.
+<br /><b>4. Transpose</b> This drop-down box will allow you to transpose music played or saved by the software.
+<br /><b>5. Get CuePoint</b> When you click on this button (or hold down "alt" and press g) the current time in the playback of the MIDI file (in seconds) will be written in the cue point text box to the right.  Note that the current point in playback can be captured using the alt-g hotkey even if advanced controls are not visible.
+<br /><b>6. Cue Point Text Box</b> This is the cue point, which represents a time (in seconds) in the music.  This number can be typed by hand, or set to the current time in music which is playing by clicking on the "Get Cue Point" button.
+<br /><b>7. Goto CuePoint</b> When you click on this button (or hold down "alt" and press c) the music will jump to the time indicted in the cue point text box.  This function allows you to play the same section of a piece of music over and over to compare how it sounds with different tuning schemes.  Note that you can jump to the cuepoint using the alt-c hotkey even if advanced controls are not visible.
+
+
+<h2 id="editingschemes">Editing Tuning Schemes</h2>
+When you click on the advanced option "Edit Tuning Schemes" button, a new window will open, like the one shown below.
+<br />
+<br />
+<img src="EditTuningSchemes.png">
+<br /><br />
+To edit tuning schemes, follow the instructions in the comments at the top of the file.  When you are done, click on "Save Tunings."  If you have made changes and close the window without saving, you will be warned.  If you have made serious mistakes and want to revert to the original configuration that came with the software, click on "Reset to default tunings."  If you click on this and select "yes," all of the changes you have ever made will be thrown out and the tuning file will be restored to "factory settings."
+
+<h2 id="howitworks">How this software tunes the MIDI instrument</h2>
+The MIDI specifications don't completely pin down the commands to use to change the tuning of a MIDI synthesizer, leaving many details to the manufacturer/programmer of the device.  In addition, many synthesizers simply don't implement the ability to tune using different tuning schemes.  So I used a trick to implement tuning in MIDI.  
+<br /><br />
+To understand how the trick works, first you must know that MIDI data streams allow you to assign each note-on or note-off event to one of 16 different "channels."  Each channel can be assigned to a different instrument sound, allowing MIDI files to represent an entire ensemble of musicians.
+<br /><br />
+The trick I came up with to re-tune MIDI instruments was to use pitch bend commands to move notes to the correct frequencies.  Unfortunately, the MIDI standard does not allow you to bend individual notes, but instead applies pitch bends to entire channels.  So my software moves notes to different channels (moving all of the C notes in all octaves to channel 1, all C#'s to channel 2, all D's to channel 3, etc.), applies the same instrument sound to all channels, and then sets the appropriate pitch bend to each channel to achieve the desired tuning scheme.
+<br /><br />
+Because of the way this scheme works, this software (and any MIDI files saved by this software) can only use one instrument sound at a time.  Also, any tuning scheme in which going up or down an octave is not always exactly a change in frequency by a factor of two (stretch tuning, for example) cannot be implemented by this method.
+<br />
+<br />
+<h2>Acknowledgements</h2>
+I would like to acknowledge John Colton, Lee Loveridge, Jake Albretsen, and Memorie Durfee for their feedback on this software, and John Colton for writing the "Things to Try" help page.
+
+<br />
+<br />
+<hr>
+<sup id="commandline">1</sup>Advanced users can get instructions on command line usage by going to the directory where the jar file is located and typing: java -jar TemperamentStudio -h
+<br />
+<sup id="midifiles">2</sup>MIDI files are a type of file which contains information about musical notes.  More information on the MIDI format can be found at <a href="http://www.midi.org/aboutmidi/tut_midifiles.php">http://www.midi.org/aboutmidi/tut_midifiles.php</a>.
+</body>
+</html>
+
