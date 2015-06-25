@@ -1,0 +1,111 @@
+Usage:
+
+java -jar TemperamentStudio.jar
+java -jar TemperamentStudio.jar -h
+java -jar TemperamentStudio.jar -v
+java -jar TemperamentStudio.jar -l
+java -jar TemperamentStudio.jar infile [outfile] [options]
+
+The first version above, with no arguments, will load the 
+graphical user interface for interactive use  The other 
+lines represent command line use of TemperamentStudio.
+In command line mode, the midi file infile.mid is loaded, a new 
+tuning scheme is applied, and then the modified midi file is 
+saved.  If the optional argument outfile is given, the retuned 
+file will be saved using the filename given.  If not, a new 
+filename will be generated from the infile name which indicates 
+the tuning method used.
+
+  -h                         Print command line help and exit.
+  			     -h must be the first argument.
+
+  -v			     Print version and exit.
+  			     -v must be the first argument.
+
+  -l			     Print license and exit.
+  			     -l must be the first argument.
+
+options 
+
+  -scheme tuning_scheme      Where "tuning_scheme" is one of the
+  	  		     tuning schemes described in
+			     TemperamentStudio.tunings.  The schemes
+			     that are defined by default are
+			     equal_temperament, pythagorean,
+			     qc_meantone, five_limit, and 
+			     werkmeister_III.
+			     An additional tuning scheme,
+			     "generic_meantone," is described below.
+			     The default value is "meantone."
+			     Additional tuning schemes can be
+			     added by following the instructions
+			     in TemperamentStudio.tunings.
+
+  -scheme generic_meantone x
+			     This generates a meantone temperament
+			     using a fifth ratio of x.  For example,
+			     if x is 1.5, this is equivalent to
+			     "pythagorean," or if it is equal to
+			     2^(7/12) = 1.498307077, this is equivalent
+			     to "equal_temperament."
+			
+  -root	rootnote	     Where rootnote is the root note for
+  			     the tuning scheme.  It can be one 
+			     of the following values: C C# D D#
+			     E F F# G G# A A# B.  The default
+			     value is D.
+
+  -refnote note		     This is the note that is set to
+  	   		     a particular frequency.  For
+			     example, for A440 tuning, note
+			     would be A.  This parameter
+			     accepts the same values as
+			     -root
+
+  -reffreq freq		     This is the frequency for the
+  	   		     reference note.  For example,
+			     for A440 tuning, freq would be
+			     440.0
+
+  -bendrange range	     This is the maximum bendrange
+  	     		     in semitones assumed when doing the 
+			     tuning.  The default value is 2.
+			     This is the general midi standard.
+			     If the synth you are using has
+			     a different bend range, use this
+			     option to set the corret bend range
+			     for your synth.
+
+  -writebendrange tf	     If tf is set to "true," a midi
+  		  	     event will be written into the midi
+			     file to attempt to set the synth
+			     to have the assumed bend range.  If
+			     this is set to "false," it will be
+			     assumed that the synth has the 
+			     correct bend range and no command to
+			     set the range is needed.  The default
+			     value is true.  It's usually safe to
+			     leave this as true.
+
+  -instrument prog	     This sets which instrument voice (program)
+  	      		     to use in the midi file.  If this is set
+			     to -1, any program changes in the 
+			     input midi will be echoed to all
+			     channels in the output file.  If it
+			     is set to -2, the first program change
+			     encountered in the input midi file
+			     will be echoed to all channels, and
+			     all further program changes in the
+			     input file will be ignored.
+			     If this is set to a value between 0
+			     and 127, the program will be set
+			     to that value.  The default is -1.
+
+  -transpose amount	     Transpose all of the notes in the
+  	     		     output midi file by this number of
+			     half steps.  The value amount must
+			     be an integer.
+
+  -overwrite tf		     If tf is true, existing files will be
+  	     		     overwritten without asking.  The default
+			     value is false.

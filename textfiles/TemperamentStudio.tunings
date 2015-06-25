@@ -1,0 +1,96 @@
+# TemperamentStudio tuning scheme
+# (c) 2014 Dallin S. Durfee
+# Permission to modify and redistribute this software is granted under 
+# the MIT License (see licence info in the help for TemperamentStudio).
+#
+# This file is where tuning systems are stored.
+# To add another tuning scheme, enter it at the bottom
+# of this file, below the other tunings.
+# To enter a new tuning scheme, on a new line
+# type (r) followed by the name for
+# the tuning scheme (alpha-numeric
+# characters, underscores, and hyphens only, no spaces
+# or other non-alpha-numeric characters).
+# On the following 12 lines give a
+# list of 12 decimal values representing by what
+# factor each note in the chromatic scale is larger
+# than the fundamental.  See the tuning scheme
+# extended_five_limit below as an
+# example.
+# 
+# Alternatively, if you put a (m) in front of the
+# name, it means that rather than giving 12 ratios,
+# on the next line after the title you will give a 
+# fifth interval to define a meantone tuning.  on the
+# next line.  See pythagorean and qc_meantone 
+# below for an example.
+#
+# Or, if you put a (c) in front of the name, it means
+# that the next twelve lines indicate the detuning
+# of each pitch in the chromatic scale from 
+# equal temperament (in cents).  See
+# the tuning scheme equal_temperament for an example.
+# 
+# Any empty line or line that starts with a 
+# pound sign is a comment and is ignored
+
+
+#equal temperament: 1.0, 2^(1/12), 2^(2/12), etc
+(c)equal_temperament
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+
+# pythagorean - fifth is ratio of 3/2
+(m)pythagorean
+3/2
+
+# quarter comma mean tone - fifth is ratio of 5^(1/4)
+(m)qc_meantone
+1.4953487812212205
+
+# This scale is Ptolemaic tuning extened to include the black notes
+# The additional ratios were defined 
+# using only intervals found in Ptolemaic tuning
+# and selecting the most just definition of each note.
+(r)five_limit
+1
+16/15
+9/8
+6/5
+5/4
+4/3
+45/32
+3/2
+8/5
+5/3
+9/5
+15/8
+
+# Werckmeister III 
+# when used with a C root, some people think this is
+# close to what Bach used for the Well-Tempered Clavier
+# see http://www.kylegann.com/histune.html, https://en.wikipedia.org/wiki/Werckmeister_temperament 
+(r)werkmeister_III
+1
+256/243
+1.1174033085417048
+32/27
+1.2528272487271463
+4/3
+1024/729
+1.494926960451048
+128/81
+1.6704363316361952
+16/9
+1.8792408730907197
+
