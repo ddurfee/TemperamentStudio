@@ -1,0 +1,14 @@
+AdvancedFileControlsLabeled.png
+ClipUnder.png
+EditSchemes.png
+EditTuningSchemes.png
+FileControlsLabeled.png
+GenericMeantone.png
+HarmonicsControls.png
+index.html
+index.html~
+MMTIcon.png
+ScreenshotLabeled.png
+Show.png
+thingstotry.html
+TuningReference.png

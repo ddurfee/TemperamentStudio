@@ -1,0 +1,14 @@
+Bach_ChoralePrelude_bwv651.mid
+Bach_GreatFantasiaAndFugueInGMinor_bwv542.mid
+Bach_HerzlichTutMichVerlangen_bwv727.mid
+Bach_OMenschBeweinDeinSundeGross_bwv622.mid
+Bach_PassacagliaInCMinor_bwv582.mid
+Bach_Prelude_bwv549.mid
+Debussy_ClairDeLune.mid
+Handel_Fuga.mid
+Handel_Gavotte.mid
+Intervals_Fifths.mid
+Intervals_Thirds.mid
+Mendelssohn_PraeludiumUndFugeCMoll.mid
+Mendelssohn_PraeludiumUndFugeGDur.mid
+Telemann_RecorderDuet.mid

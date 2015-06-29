@@ -6,11 +6,11 @@
 <title>Help file for TemperamentStudio</title>
 </head>
 <body>
-<h1><img src="MMTIcon.png"> TemperamentStudio</h1>
+<h1><img src="MMTIcon.png"> Temperament Studio</h1>
 (c) 2014 Dallin S. Durfee
 This software is free to distribute and modify under the <a href="../textfiles/license.txt">MIT License</a>.
 <hr>
-TemperamentStudio is designed to help you hear how various
+Temperament Studio is designed to help you hear how various
 instruments sound when they are tuned using different modern and historic
 tuning schemes or intonations.  For ideas of things to try with the software,
 see the <a href="thingstotry.html">Things to Try</a> page.
@@ -86,15 +86,15 @@ When the "Sine + harmonics" option is selected, an additional set of controls wi
 <br />
 
 <h2 id="tuningschemes">Tuning Schemes</h2>
-The tuning schemes included by default are the following:
+Different methods for tuning are described in the paper "Hearing the Physics of Musical Scales with MIDI" by Dallin S. Durfee and John S. Colton.  A link to this paper will be included once it is published.  The tuning schemes included in this software by default are the following:
 <ul>
-<li><b>equal_temperament</b> - This is the standard 12-tone equal temperament used almost exclusively today.</li>
-<li><b>pythagorean</b> - Pythagorean tuning, based on the just fifth ratio of 3/2.</li>
-<li><b>qc_meantone</b> - Quarter comma meantone, the predominant tuning scheme in wester music in the baroque period.  It traditionally used a root note of D.</li>
-<li><b>five_limit</b> - A five-limit scale based on Ptolemaic just intonation.  This is a just intonation scheme which uses the ratios for the diatonic scale given in Ptolemy's "intensely diatonic scale."  The missing ratios for the black notes were filled in using intervals already present in the Ptolemaic scale, selecting the most just (lowest integer) interval when more than one options was possible.  For example, to define the minor third above the root, I considered all of the minor thirds present in the Ptolemaic scale.  There are two of them - one being a ratio of 6/5, the other a ratio of 32/27.  So I selected the most just option, 6/5.</li>
+<li><b>equal_temperament</b> - This is the standard 12-tone equal temperament used almost exclusively today.  See the paper above or <a href="https://en.wikipedia.org/wiki/Equal_temperament">https://en.wikipedia.org/wiki/Equal_temperament</a> for more information.</li>
+<li><b>pythagorean</b> - Pythagorean tuning, based on the just fifth ratio of 3/2. See the paper above or <a href="https://en.wikipedia.org/wiki/Pythagorean_tuning">https://en.wikipedia.org/wiki/Pythagorean_tuning</a> for more information.</li>
+<li><b>qc_meantone</b> - Quarter comma meantone, the predominant tuning scheme in wester music in the baroque period.  It traditionally used a root note of D.  See the paper above or <a href="https://en.wikipedia.org/wiki/Quarter-comma_meantone">https://en.wikipedia.org/wiki/Quarter-comma_meantone</a> for more information.</li>
+<li><b>five_limit</b> - A five-limit scale based on Ptolemaic just intonation.  This is a just intonation scheme which uses the ratios for the diatonic scale given in Ptolemy's "intensely diatonic scale."  The missing ratios for the black notes were filled in using intervals already present in the Ptolemaic scale, selecting the most just (lowest integer) interval when more than one options was possible.  For example, to define the minor third above the root, I considered all of the minor thirds present in the Ptolemaic scale.  There are two of them - one being a ratio of 6/5, the other a ratio of 32/27.  So I selected the most just option, 6/5.  See the paper above or <a href="https://en.wikipedia.org/wiki/Ptolemy%27s_intense_diatonic_scale">https://en.wikipedia.org/wiki/Ptolemy%27s_intense_diatonic_scale</a> for more information.</li>
 <li><b>werkmeister_III</b> - The Werkmeister III scale, which some think may be similar to the tuning Bach used when performing the Well-Tempered Clavier.  See <a href="http://www.kylegann.com/histune.html">http://www.kylegann.com/histune.html</a> and <a href="https://en.wikipedia.org/wiki/Werckmeister_temperament">https://en.wikipedia.org/wiki/Werckmeister_temperament</a> for more information.
 </li>
-<li><b>generic_meantone</b> - This option allows you to build a meantone temperament based on an arbitrary definition of the 5th.  See the <a href="#genericmeantone">Generic Meantone</a> section below.  This tuning is not defined in the tuning file, but is implemented directly by the software.
+<li><b>generic_meantone</b> - This option allows you to build a meantone temperament based on an arbitrary definition of the 5th.  See the <a href="#genericmeantone">Generic Meantone</a> section below for information on using this option.  This tuning is not defined in the tuning file, but is implemented directly by the software.  For more information on meantone tuning, see the paper above or <a href="https://en.wikipedia.org/wiki/Meantone">https://en.wikipedia.org/wiki/Meantone</a>.  
 </ul>
 
 <h2 id="genericmeantone">Generic Meantone</h2>
